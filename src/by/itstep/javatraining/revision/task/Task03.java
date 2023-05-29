@@ -26,6 +26,13 @@ package by.itstep.javatraining.revision.task;
 
 public class Task03 {
     public static String task03(int number) {
-        return "?";
+        int flag = 0;
+        StringBuilder text = new StringBuilder("1");
+        for (int i = 2; flag == 0; i = i * 2) {
+            if (i <= number) {
+                text.append(" ").append(i);
+            } else flag = 1;
+        }
+        return number < 1 ? "0" : text.toString();
     }
 }
