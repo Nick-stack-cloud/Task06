@@ -27,6 +27,22 @@ package by.itstep.javatraining.revision.task;
 
 public class Task05 {
     public static int task05(long number) {
-        return 0;
+        long max = 0;
+        long a;
+if(number<0){
+    number = -number;
+}
+        for (long i = 10; i <= 1000000000000000000L; i = i * 10) {
+            a =  (number / i) % 10;
+
+            if (i == 10) {
+                a =  number % i;
+            }
+            if (a > max) {
+                max = a;
+            }
+            if(i>number)return (int)max;
+        }
+        return (int)max;
     }
 }
