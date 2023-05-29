@@ -32,6 +32,6 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static boolean task02(int number) {
-        return false;
+        return number > 0 && 16777216 % number == 0;
     }
 }
