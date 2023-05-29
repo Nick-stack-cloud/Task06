@@ -40,6 +40,18 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static long task04(int number) {
-        return 0;
+        if (number < 1) return -1;
+        long num = 1;
+        long pr = 0;
+        long k;
+        if (number == 1) return 0;
+        if (number == 2) return 1;
+        for (int i = 3; i <= number; i++) {
+            k = num;
+            num += pr;
+            pr = k;
+        }
+        return num;
+        //Можно было через массив, но я подумал это будет слишком легко
     }
 }
