@@ -29,6 +29,24 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static int task06(long number) {
-        return 0;
+        long i=1;
+        long m;
+        long min=9;
+        int k=0;
+        if(number<0) number=-number;
+        if(number == 0) return 1;
+        while (i<number){
+            if(i==1) m=number%10;
+            else m=number/i%10;
+            if(min>m) {
+                min=m;
+                k=0;
+            }
+            if(min==m) k++;
+            if(i == 1000000000000000000L)return k;
+            i*=10;
+
+        }
+        return k;
     }
 }
