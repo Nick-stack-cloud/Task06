@@ -29,13 +29,13 @@ public class Task07 {
     public static int task07(long number) {
         long max1 = 0;
         long a;
-        if(number<0){
+        if (number < 0) {
             number = -number;
         }
-        if(number<10) return -1;
+        if (number < 10) return -1;
         for (long i = 1; i <= 1000000000000000000L; i = i * 10) {
-            if(i>number) break;
-            a =  (number / i) % 10;
+            if (i > number) break;
+            a = (number / i) % 10;
 
             if (a > max1) {
                 max1 = a;
@@ -43,15 +43,15 @@ public class Task07 {
         }
         long max2 = max1;
         for (long i = 1; i <= 1000000000000000000L; i = i * 10) {
-            if(i>number) break;
-            a =  (number / i) % 10;
+            if (i > number) break;
+            a = (number / i) % 10;
 
             if ((a > max2 && a != max1) || max2 == max1) {
                 max2 = a;
             }
         }
-        if(max2 == max1) return -1;
-        return (int)max2;
+        if (max2 == max1) return -1;
+        return (int) max2;
 
     }
 }
