@@ -33,6 +33,15 @@ package by.itstep.javatraining.revision.task;
 
 public class Task09 {
     public static int task09(long number) {
-        return 0;
+        if (number < 0) number = -number;
+        long num;
+        int k = 0;
+        for (long i = 10; i < number / 10; i *= 10) {
+            num = (number / i) % 10;
+            if (num > ((number / (i * 10L)) % 10) && num > ((number / (i / 10) % 10))) {
+                k++;
+            }
+        }
+        return k;
     }
 }
