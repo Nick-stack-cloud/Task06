@@ -32,6 +32,18 @@ package by.itstep.javatraining.revision.task;
 
 public class TaskX {
     public static boolean taskX(long number) {
-        return false;
+        if (number < 0) number = -number;
+        int flag = 1;
+        for (long i = 1; i < number; i *= 10) {
+            for (long j = i * 10; j < number; j *= 10) {
+                if ((number / i) % 10 == (number / j) % 10) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag == 0) break;
+        }
+        return flag == 1;
     }
+    //9,78
 }

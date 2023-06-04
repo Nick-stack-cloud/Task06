@@ -30,21 +30,19 @@ package by.itstep.javatraining.revision.task;
 
 public class Task10 {
     public static int task10(long number) {
-        if(number<0) number = -number;
-        long n = 1;
-        long m = 1;
-        for (long i = 1; i < number/10 ; i*=10) {
-            if((number/i)%10 == (number/(i*10))%10){
+        if (number < 0) number = -number;
+        int n = 1;
+        int m = 1;
+        for (long i = 1; i < number / 10; i *= 10) {
+            if ((number / i) % 10 == (number / (i * 10)) % 10) {
                 n++;
-            }
-            else if(n>m){
+            } else if (n > m) {
                 m = n;
                 n = 1;
-            }
-            else n = 1;
+            } else n = 1;
 
         }
-        if(n>m) m = n;
-        return (int)m;
+        if (n > m) m = n;
+        return m;
     }
 }
